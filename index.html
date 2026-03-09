@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StyleCart – New Fashion Collection</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ══ ANNOUNCEMENT BAR ══ -->
+<div class="announcement-bar">
+  🚚 Free shipping on orders over ₹999 &nbsp;|&nbsp;
+  <a href="#">New arrivals every Friday</a> &nbsp;|&nbsp;
+  Use code <strong>STYLE25</strong> for 25% off
+</div>
+
+<!-- ══ NAVBAR ══ -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid px-4">
+    <a class="navbar-brand" href="#">Style<span>Cart</span></a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <i class="bi bi-list nav-hamburger"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav mx-auto gap-1">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Women</a>
+          <ul class="dropdown-menu custom-dropdown">
+            <li><a class="dropdown-item custom-dropdown-item" href="#">Dresses</a></li>
+            <li><a class="dropdown-item custom-dropdown-item" href="#">Tops &amp; Blouses</a></li>
+            <li><a class="dropdown-item custom-dropdown-item" href="#">Jeans &amp; Pants</a></li>
+            <li><a class="dropdown-item custom-dropdown-item" href="#">Co-ord Sets</a></li>
+            <li><a class="dropdown-item custom-dropdown-item" href="#">Activewear</a></li>
+            <li><a class="dropdown-item custom-dropdown-item" href="#">Ethnic</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Men</a>
+          <ul class="dropdown-menu custom-dropdown">
+            <li><a class="dropdown-item custom-dropdown-item" href="#">T-Shirts</a></li>
+            <li><a class="dropdown-item custom-dropdown-item" href="#">Shirts</a></li>
+            <li><a class="dropdown-item custom-dropdown-item" href="#">Jeans &amp; Chinos</a></li>
+            <li><a class="dropdown-item custom-dropdown-item" href="#">Kurtas</a></li>
+            <li><a class="dropdown-item custom-dropdown-item" href="#">Activewear</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link sale-link" href="#">Sale</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">New In</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Collections</a></li>
+      </ul>
+      <div class="d-flex align-items-center gap-2">
+        <input type="text" class="search-bar d-none d-lg-block" placeholder="Search styles…" id="searchInput"/>
+        <button class="icon-btn" onclick="toggleCart()" title="Cart">
+          <i class="bi bi-bag"></i>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+        <button class="icon-btn" title="Wishlist" onclick="openWishlist()">
+<i class="bi bi-heart"></i>
+<span class="cart-badge" id="wishlistBadge">0</span>
+</button>
+       <button class="icon-btn" title="Account" data-bs-toggle="modal" data-bs-target="#accountModal">
+<i class="bi bi-person"></i>
+</button>
+        <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">🌙 Dark</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero py-0">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="container hero-content py-5 my-3">
+    <div class="row align-items-center">
+      <div class="col-lg-6 col-md-7">
+        <p class="hero-eyebrow">Spring / Summer 2026</p>
+        <h1>Dress Like You Mean <em>It</em></h1>
+        <p>Explore over 5,000 styles from casual to couture. New drops every week — discover what's trending now.</p>
+        <div class="d-flex flex-wrap gap-2">
+          <a href="#products" class="btn-hero-primary">Shop Women</a>
+          <a href="#products" class="btn-hero-outline">Shop Men</a>
+        </div>
+        <div class="hero-stats">
+          <div><div class="hero-stat-num">5K+</div><div class="hero-stat-label">Styles</div></div>
+          <div><div class="hero-stat-num">180K</div><div class="hero-stat-label">Customers</div></div>
+          <div><div class="hero-stat-num">4.8★</div><div class="hero-stat-label">Rating</div></div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-5 d-none d-md-flex justify-content-center">
+        <div class="hero-image-wrap">
+          <div class="hero-img-placeholder">
+  <img src="image/hero-model.jpg" alt="Hero" style="width:100%; height:100%; object-fit:cover; border-radius:12px;"/>
+</div>
+          <div class="hero-float-badge">
+            <strong>🔥 Trending now</strong><br/>
+            <span>Co-ord Sets – 3,200 sold</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MARQUEE ══ -->
+<div class="marquee-wrap">
+  <div class="marquee-inner">
+    <span>New Season In</span><span class="accent">★</span>
+    <span>Free Shipping ₹999+</span><span class="accent">★</span>
+    <span>25% Off with STYLE25</span><span class="accent">★</span>
+    <span>5000+ Styles</span><span class="accent">★</span>
+    <span>Easy Returns 30 Days</span><span class="accent">★</span>
+    <span>New Arrivals Friday</span><span class="accent">★</span>
+    <span>New Season In</span><span class="accent">★</span>
+    <span>Free Shipping ₹999+</span><span class="accent">★</span>
+    <span>25% Off with STYLE25</span><span class="accent">★</span>
+    <span>5000+ Styles</span><span class="accent">★</span>
+    <span>Easy Returns 30 Days</span><span class="accent">★</span>
+    <span>New Arrivals Friday</span><span class="accent">★</span>
+  </div>
+</div>
+
+<!-- ══ CATEGORIES ══ -->
+<section>
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-label">Browse by</p>
+      <h2 class="section-title">Shop Categories</h2>
+    </div>
+    <div class="row g-3">
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="category-card" onclick="filterCategory('dresses')">
+          <img src="image/dress.jpg" class="category-img">
+          <div class="cat-overlay"></div>
+          <div class="cat-info"><h4>Dresses</h4><span>840+ items</span></div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="category-card" onclick="filterCategory('tops')">
+          <img src="image/tops.jpg" class="category-img">
+          <div class="cat-overlay"></div>
+          <div class="cat-info"><h4>Tops</h4><span>1,200+ items</span></div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="category-card" onclick="filterCategory('jeans')">
+          <img src="image/jeans.jpg" class="category-img">
+
+          <div class="cat-overlay"></div>
+          <div class="cat-info"><h4>Jeans</h4><span>560+ items</span></div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="category-card" onclick="filterCategory('ethnic')">
+          <img src="image/ethnic.jpg" class="category-img">
+          <div class="cat-overlay"></div>
+          <div class="cat-info"><h4>Ethnic</h4><span>720+ items</span></div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="category-card" onclick="filterCategory('active')">
+          <img src="image/active.jpg" class="category-img">
+          <div class="cat-overlay"></div>
+          <div class="cat-info"><h4>Active</h4><span>380+ items</span></div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="category-card" onclick="filterCategory('men')">
+          <img src="image/men.jpg" class="category-img">
+          <div class="cat-overlay"></div>
+          <div class="cat-info"><h4>Men</h4><span>960+ items</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PRODUCTS ══ -->
+<section id="products" class="products-section">
+  <div class="container">
+    <div class="d-flex align-items-end justify-content-between mb-4 flex-wrap gap-3">
+      <div>
+        <p class="section-label">Curated for you</p>
+        <h2 class="section-title">Trending Now</h2>
+      </div>
+      <select class="sort-select" id="sortSelect" onchange="sortProducts()">
+        <option value="popular">Most Popular</option>
+        <option value="newest">Newest First</option>
+        <option value="low">Price: Low to High</option>
+        <option value="high">Price: High to Low</option>
+        <option value="rating">Top Rated</option>
+      </select>
+    </div>
+
+    <div class="filter-bar" id="filterBar">
+      <button class="filter-pill active" onclick="setFilter(this,'all')">All</button>
+      <button class="filter-pill" onclick="setFilter(this,'new')">New In</button>
+      <button class="filter-pill" onclick="setFilter(this,'sale')">On Sale</button>
+      <button class="filter-pill" onclick="setFilter(this,'bestseller')">Bestsellers</button>
+      <button class="filter-pill" onclick="setFilter(this,'under500')">Under ₹500</button>
+      <button class="filter-pill" onclick="setFilter(this,'dresses')">Dresses</button>
+      <button class="filter-pill" onclick="setFilter(this,'tops')">Tops</button>
+      <button class="filter-pill" onclick="setFilter(this,'men')">Men</button>
+    </div>
+
+    <div class="row g-3" id="productsGrid"></div>
+
+    <div class="text-center mt-5">
+      <button class="btn-hero-outline" onclick="loadMore()" id="loadMoreBtn">Load More Products</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROMO BANNER ══ -->
+<section>
+  <div class="container">
+    <div class="promo-banner">
+      <div class="row align-items-center">
+        <div class="col-lg-7">
+          <p class="section-label" style="color:var(--accent)">Flash Sale</p>
+          <h2 class="section-title promo-title">Up to <em>50% Off</em><br/>Summer Essentials</h2>
+          <p class="promo-sub">Limited time only. Ends when the clock hits zero.</p>
+          <a href="#products" class="btn-hero-primary">Shop the Sale</a>
+        </div>
+        <div class="col-lg-5 d-none d-lg-flex justify-content-end align-items-center promo-emoji">🛍️</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SIZE GUIDE ══ -->
+<section class="size-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-label">Find your fit</p>
+      <h2 class="section-title">Size Guide</h2>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+        <ul class="nav nav-tabs mb-4 size-tabs">
+          <li class="nav-item">
+            <button class="nav-link active size-tab-btn" data-bs-toggle="tab" data-bs-target="#womenTab">Women</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link size-tab-btn" data-bs-toggle="tab" data-bs-target="#menTab">Men</button>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="womenTab">
+            <div class="table-responsive">
+              <table class="table size-table">
+                <thead><tr><th>Size</th><th>Bust (cm)</th><th>Waist (cm)</th><th>Hips (cm)</th><th>US Size</th></tr></thead>
+                <tbody>
+                  <tr><td>XS</td><td>78–82</td><td>60–64</td><td>86–90</td><td>0–2</td></tr>
+                  <tr><td>S</td><td>83–87</td><td>65–69</td><td>91–95</td><td>4–6</td></tr>
+                  <tr><td>M</td><td>88–92</td><td>70–74</td><td>96–100</td><td>8–10</td></tr>
+                  <tr><td>L</td><td>93–97</td><td>75–79</td><td>101–105</td><td>12–14</td></tr>
+                  <tr><td>XL</td><td>98–102</td><td>80–84</td><td>106–110</td><td>16–18</td></tr>
+                  <tr><td>XXL</td><td>103–108</td><td>85–90</td><td>111–116</td><td>20–22</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="menTab">
+            <div class="table-responsive">
+              <table class="table size-table">
+                <thead><tr><th>Size</th><th>Chest (cm)</th><th>Waist (cm)</th><th>Hip (cm)</th></tr></thead>
+                <tbody>
+                  <tr><td>S</td><td>88–92</td><td>74–78</td><td>88–92</td></tr>
+                  <tr><td>M</td><td>93–97</td><td>79–83</td><td>93–97</td></tr>
+                  <tr><td>L</td><td>98–103</td><td>84–88</td><td>98–103</td></tr>
+                  <tr><td>XL</td><td>104–109</td><td>89–94</td><td>104–109</td></tr>
+                  <tr><td>XXL</td><td>110–116</td><td>95–101</td><td>110–116</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIALS ══ -->
+<section>
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-label">Real Reviews</p>
+      <h2 class="section-title">What Our Customers Say</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="testimonial-card">
+          <div class="d-flex align-items-center gap-3">
+            <div class="testimonial-avatar">P</div>
+            <div><div class="testimonial-name">Priya S.</div><div class="testimonial-location">Mumbai</div></div>
+            <div class="stars ms-auto">★★★★★</div>
+          </div>
+          <p class="testimonial-text">"Ordered a floral co-ord set and it arrived in just 2 days! The fabric quality is amazing and the fit is spot on. Will definitely order again!"</p>
+          <small class="review-tag">Verified Purchase · Co-ord Floral Set</small>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial-card">
+          <div class="d-flex align-items-center gap-3">
+            <div class="testimonial-avatar">R</div>
+            <div><div class="testimonial-name">Rahul K.</div><div class="testimonial-location">Delhi</div></div>
+            <div class="stars ms-auto">★★★★★</div>
+          </div>
+          <p class="testimonial-text">"StyleCart has the best selection of men's ethnic wear. Bought 3 kurtas and the stitching is impeccable. Easy returns made it stress-free."</p>
+          <small class="review-tag">Verified Purchase · Bandhgala Kurta</small>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial-card">
+          <div class="d-flex align-items-center gap-3">
+            <div class="testimonial-avatar">A</div>
+            <div><div class="testimonial-name">Aanya M.</div><div class="testimonial-location">Bengaluru</div></div>
+            <div class="stars ms-auto">★★★★☆</div>
+          </div>
+          <p class="testimonial-text">"Love the dark mode! Makes browsing late at night so much easier. The recommendations are really accurate too. Found my perfect summer dress in minutes."</p>
+          <small class="review-tag">Verified Purchase · Sundress Collection</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ NEWSLETTER ══ -->
+<div class="newsletter-section py-5">
+  <div class="container text-center">
+    <p class="section-label">Stay in the loop</p>
+    <h2 class="section-title mb-3">Get 15% Off Your First Order</h2>
+    <p class="newsletter-sub">Subscribe for exclusive deals, new arrivals, and style inspiration.</p>
+    <div class="d-flex justify-content-center">
+      <input type="email" class="newsletter-input" placeholder="Your email address" id="newsletterEmail"/>
+      <button class="newsletter-btn" onclick="subscribeNewsletter()">Subscribe</button>
+    </div>
+    <p class="newsletter-note">No spam. Unsubscribe anytime.</p>
+  </div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-3 col-md-6">
+        <div class="footer-brand">Style<span>Cart</span></div>
+        <p class="footer-desc">Fashion that fits every story. Curated styles for every mood, occasion, and size.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="social-btn"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="social-btn"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="social-btn"><i class="bi bi-pinterest"></i></a>
+          <a href="#" class="social-btn"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-3 col-6">
+        <h6 class="footer-heading">Shop</h6>
+        <ul class="footer-links">
+          <li><a href="#">New Arrivals</a></li>
+          <li><a href="#">Women's Fashion</a></li>
+          <li><a href="#">Men's Fashion</a></li>
+          <li><a href="#">Sale Items</a></li>
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Accessories</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-md-3 col-6">
+        <h6 class="footer-heading">Account</h6>
+        <ul class="footer-links">
+          <li><a href="#">My Account</a></li>
+          <li><a href="#">Order History</a></li>
+          <li><a href="#">Wishlist</a></li>
+          <li><a href="#">Track Order</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Gift Cards</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-md-3 col-6">
+        <h6 class="footer-heading">Help</h6>
+        <ul class="footer-links">
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Shipping Policy</a></li>
+          <li><a href="#">Return Policy</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-3 col-6">
+        <h6 class="footer-heading">Contact</h6>
+        <ul class="footer-links">
+          <li><i class="bi bi-envelope footer-icon"></i><a href="mailto:hello@stylecart.in">hello@stylecart.in</a></li>
+          <li><i class="bi bi-telephone footer-icon"></i><a href="tel:18001234567">1800-123-4567</a></li>
+          <li><i class="bi bi-clock footer-icon"></i><span>Mon–Sat, 9am–7pm</span></li>
+          <li class="mt-2"><i class="bi bi-whatsapp footer-icon" style="color:#25d366"></i><a href="#">WhatsApp Support</a></li>
+        </ul>
+        <div class="mt-4">
+          <h6 class="footer-heading">Download App</h6>
+          <div class="d-flex gap-2 flex-column" style="max-width:160px">
+            <a href="#" class="app-btn"><i class="bi bi-apple"></i><span>App Store</span></a>
+            <a href="#" class="app-btn"><i class="bi bi-google-play"></i><span>Google Play</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 StyleCart. All rights reserved.</span>
+      <div class="payment-icons">
+        <span class="pay-icon">VISA</span>
+        <span class="pay-icon">MC</span>
+        <span class="pay-icon">UPI</span>
+        <span class="pay-icon">AMEX</span>
+        <span class="pay-icon">PayTM</span>
+        <span class="pay-icon">GPay</span>
+      </div>
+      <span>
+        <a href="#" class="footer-bottom-link">Privacy</a>
+        <a href="#" class="footer-bottom-link">Terms</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ BACK TO TOP ══ -->
+<button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="bi bi-arrow-up"></i>
+</button>
+  <!-- WISHLIST DRAWER -->
+<div class="cart-overlay" id="wishlistOverlay" onclick="closeWishlist()"></div>
+
+<div class="cart-drawer" id="wishlistDrawer">
+
+<div class="cart-header">
+<h3>Your Wishlist</h3>
+
+<button class="icon-btn" onclick="closeWishlist()">
+<i class="bi bi-x-lg"></i>
+</button>
+
+</div>
+
+<div class="cart-body" id="wishlistBody">
+
+<p style="text-align:center;color:gray">Your wishlist is empty</p>
+
+</div>
+
+</div>
+<!-- ══ CART DRAWER ══ -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+
+  <div class="cart-header">
+    <h3>Your Bag</h3>
+    <button class="icon-btn" onclick="toggleCart()"><i class="bi bi-x-lg"></i></button>
+  </div>
+  <div class="cart-body" id="cartBody">
+    <div class="cart-empty">
+      <i class="bi bi-bag"></i>
+      <p class="cart-empty-title">Your bag is empty</p>
+      <p class="cart-empty-sub">Add items you love to get started</p>
+      <a href="#products" onclick="toggleCart()" class="btn-hero-primary" style="padding:10px 24px">Start Shopping</a>
+    </div>
+  </div>
+  <div class="cart-footer" id="cartFooter" style="display:none">
+    <div class="cart-subtotal">
+      <span>Subtotal</span>
+      <span id="cartTotal">₹0</span>
+    </div>
+    <p class="cart-sub-note">Shipping &amp; taxes calculated at checkout</p>
+    <button class="btn-checkout" onclick="goToCheckout()">
+Checkout Securely
+</button>
+    <div class="text-center mt-3">
+      <span class="cart-secure-note">🔒 Secure · 30-day returns · Free shipping ₹999+</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ DISCOUNT POPUP ══ -->
+<div class="popup-overlay" id="popupOverlay" style="display:none">
+  <div class="popup-box">
+    <div class="popup-header">
+      <button class="popup-close" onclick="closePopup()"><i class="bi bi-x"></i></button>
+      <p class="popup-eyebrow">Welcome to StyleCart</p>
+      <div class="popup-discount">25% OFF</div>
+      <h2>Your First Order</h2>
+      <p>Join thousands of fashion-forward shoppers.</p>
+    </div>
+    <div class="popup-body">
+      <p>Enter your email to unlock your exclusive discount code.</p>
+      <input type="email" class="popup-input" placeholder="you@example.com" id="popupEmail"/>
+      <button class="popup-submit" onclick="claimDiscount()">Unlock My 25% Off</button>
+      <div class="popup-skip"><a onclick="closePopup()">No thanks, I'll pay full price</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ QUICK VIEW MODAL ══ -->
+<div class="modal fade qv-modal" id="quickViewModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content qv-content">
+      <div class="modal-body p-4">
+        <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"></button>
+        <div class="row g-4">
+          <div class="col-md-5">
+            <div class="qv-img" id="qvImage">👗</div>
+          </div>
+          <div class="col-md-7 d-flex flex-column justify-content-center">
+            <p class="product-brand" id="qvBrand">StyleCart</p>
+            <h3 class="qv-name" id="qvName">Product Name</h3>
+            <div class="product-rating mb-3">
+              <span class="stars">★★★★★</span>
+              <span class="rating-count" id="qvRating">(124 reviews)</span>
+            </div>
+            <div class="product-price mb-4">
+              <span class="price-current" id="qvPrice">₹999</span>
+              <span class="price-original" id="qvOriginal">₹1,499</span>
+              <span class="price-discount" id="qvDiscount">33% OFF</span>
+            </div>
+            <p class="size-label">Select Size</p>
+            <div class="d-flex flex-wrap gap-2 mb-4" id="qvSizes">
+              <button class="size-btn" onclick="selectSize(this)">XS</button>
+              <button class="size-btn" onclick="selectSize(this)">S</button>
+              <button class="size-btn selected" onclick="selectSize(this)">M</button>
+              <button class="size-btn" onclick="selectSize(this)">L</button>
+              <button class="size-btn" onclick="selectSize(this)">XL</button>
+            </div>
+            <div class="d-flex gap-3">
+              <button class="btn-add-cart flex-grow-1" onclick="addFromQuickView()">Add to Bag</button>
+             <button class="icon-btn" title="Wishlist" onclick="openWishlist()">
+<i class="bi bi-heart"></i>
+<span class="cart-badge" id="wishlistBadge">0</span>
+</button>
+            </div>
+            <div class="qv-meta mt-3">
+              <span><i class="bi bi-truck me-1"></i>Free delivery ₹999+</span>
+              <span><i class="bi bi-arrow-return-left me-1"></i>30-day returns</span>
+              <span><i class="bi bi-shield-check me-1"></i>Secure payment</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ TOAST ══ -->
+<div class="toast-notif" id="toastNotif">
+  <i class="bi bi-check-circle-fill"></i>
+  <span id="toastMsg">Done!</span>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+<!-- ACCOUNT LOGIN / REGISTER -->
+<div class="modal fade" id="accountModal" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content p-4">
+
+<h4 class="text-center mb-3">My Account</h4>
+
+<ul class="nav nav-tabs mb-3">
+
+<li class="nav-item">
+<button class="nav-link active" data-bs-toggle="tab" data-bs-target="#loginTab">
+Login
+</button>
+</li>
+
+<li class="nav-item">
+<button class="nav-link" data-bs-toggle="tab" data-bs-target="#registerTab">
+Register
+</button>
+</li>
+
+</ul>
+
+<div class="tab-content">
+
+<!-- LOGIN FORM -->
+<div class="tab-pane fade show active" id="loginTab">
+
+<input type="email" class="form-control mb-3" placeholder="Email">
+
+<input type="password" class="form-control mb-3" placeholder="Password">
+
+<button class="btn btn-dark w-100" onclick="loginUser()">
+Login
+</button>
+
+</div>
+
+<!-- REGISTER FORM -->
+<div class="tab-pane fade" id="registerTab">
+
+<input type="text" class="form-control mb-3" placeholder="Full Name">
+
+<input type="email" class="form-control mb-3" placeholder="Email">
+
+<input type="password" class="form-control mb-3" placeholder="Password">
+
+<button class="btn btn-dark w-100" onclick="registerUser()">
+Create Account
+</button>
+
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+</body>
+</html>
